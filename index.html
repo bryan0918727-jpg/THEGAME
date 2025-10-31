@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>7th & 8th Grade Math Practice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">±</div>
+    <h1>7th &amp; 8th Grade Math Practice</h1>
+    <p class="subtitle">Interactive Worksheets</p>
+  </header>
+
+  <main class="grid" id="grid"></main>
+
+  <footer class="footer">
+    <small>© 2025 Math ± Learning Portal</small>
+  </footer>
+
+  <script>
+    const topics = [
+      "Pre-Algebra Basics", "Fractions & Ratios", "Decimals Review", "Percents Practice",
+      "Order of Operations", "Exponents", "Linear Equations", "Inequalities",
+      "Graphing Points", "Slope and Intercept", "Polynomials", "Factoring",
+      "Quadratic Equations", "Scientific Notation", "Rational Numbers",
+      "Proportions", "Unit Conversions", "Angles and Triangles",
+      "Perimeter and Area", "Surface Area", "Volume", "Pythagorean Theorem",
+      "Probability", "Statistics", "Box Plots", "Mean Median Mode",
+      "Transformations", "Symmetry", "Congruence", "Similarity",
+      "Coordinate Geometry", "Word Problems", "Simple Interest",
+      "Functions", "Tables and Graphs", "Sequences", "Data Analysis",
+      "Distributive Property", "Integer Operations", "Absolute Value",
+      "Irrational Numbers", "Radicals", "Square Roots", "Cubes & Roots",
+      "Distance Formula", "Midpoint Formula", "Slope Formula", "Graphing Lines",
+      "Area of Circles", "Volume of Prisms"
+    ];
+
+    const grid = document.getElementById("grid");
+
+    topics.forEach((title, i) => {
+      const num = String(i + 1).padStart(2, "0");
+      const card = document.createElement("a");
+      card.href = `topics/topic${num}.html`;
+      card.className = "card";
+      card.innerHTML = `
+        <div class="thumb"></div>
+        <div class="info">
+          <h3>${title}</h3>
+          <p>Practice ${title.toLowerCase()} problems</p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
